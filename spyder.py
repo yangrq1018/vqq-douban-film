@@ -34,7 +34,6 @@ def douban_films():
         rel += find_list_items(soup)
     return rel
 
-
 def parse_films(films):
     '''films is a list of `bs4.element.Tag` objects'''
     rel = []
