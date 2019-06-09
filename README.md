@@ -164,6 +164,8 @@ if __name__ == '__main__':
     df.to_html('vqq_douban_films.html', escape=False)
 ```
 
+注意，因为观影链接很长，超过30-40个字符了，所以pandas默认在转换为字符串的时候会裁切过长的部分变成…，这样会导致HTML tag `<a href="XXX">link</a>`不能加载出来，因为后面的 tag 被裁掉了。解决这个问题需要配置Pandas的全局变量`pd.set_option('display.max_colwidth', -1)`.
+
 ## 项目管理
 
 代码部分就是这样。那么写完了代码，就要把它归档保存，也便于分析。选择放在Github上。
